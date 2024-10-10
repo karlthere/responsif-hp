@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deteksi Mobile</title>
+    <style>
+        /* Atur agar pesan hanya muncul jika di mobile */
+        #mobile-message {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: red;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            z-index: 1000;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="mobile-message">
+        Harap buka dengan laptop untuk pengalaman terbaik.
+    </div>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati in molestiae, a harum suscipit recusandae
+        dicta cupiditate omnis vitae quasi? Dignissimos vero veniam, minima molestias ea quas quibusdam asperiores
+        totam?</p>
+
+    <script>
+        // Fungsi untuk mendeteksi perangkat mobile
+        function isMobileDevice() {
+            return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
+        }
+
+        // Menampilkan pesan jika perangkat mobile terdeteksi
+        if (isMobileDevice()) {
+            document.getElementById('mobile-message').style.display = 'block';
+        }
+    </script>
+</body>
+
+</html>
